@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>高清粒子爱心</title>
+  <style>
+    html,
+    body {
+      height: 100%;
+      padding: 0;
+      margin: 0;
+      background: #000;
+      overflow: hidden;
+    }
+
+    .middle {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .heart-container {
+      position: relative;
+      max-width: 95%; /* 增大容器最大宽度 */
+      width: 80vmin;  /* 添加基于视口的宽度 */
+    }
+
+    .heart-image {
+      width: 100%;
+      height: auto;
+      image-rendering: crisp-edges;
+      image-rendering: -moz-crisp-edges;
+      image-rendering: -webkit-optimize-contrast;
+      filter: drop-shadow(0 0 10px rgba(255,192,203,0.8));
+    }
+
+    /* 高分辨率设备优化 */
+    @media 
+    (-webkit-min-device-pixel-ratio: 2), 
+    (min-resolution: 192dpi) { 
+      .heart-container {
+        max-width: 1000px; /* 增大高清设备最大尺寸 */
+      }
+    }
+
+    /* 移动端优化 */
+    @media (max-width: 768px) {
+      .heart-container {
+        width: 95vmin; /* 在移动端使用更大的相对尺寸 */
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="middle">
+    <div class="heart-container">
+      <img 
+        src="https://pic.imgdb.cn/item/642547f5a682492fcc15cd5d.gif" 
+        class="heart-image"
+        alt="粒子爱心效果"
+        onerror="this.src='fallback-highres.png'"
+      >
+    </div>
+  </div>
+</body>
+</html>
